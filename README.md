@@ -1,4 +1,4 @@
-# namaste react Foodie
+# React Foodie
 
 # Parcel
 
