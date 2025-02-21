@@ -37,7 +37,7 @@ const Body = () => {
     <Shrimmer />
   ) : (
     <div className="body">
-      <div className="flex">
+      <div className="flex mx-6">
         <div className=" m-4 p-4">
           <input
             type="text"
@@ -77,7 +77,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap mx-8">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}

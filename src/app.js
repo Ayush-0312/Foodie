@@ -11,15 +11,17 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
 import appstore from "./utils/appStore";
 import Cart from "./components/Cart";
+import Footer from "./components/Footer";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
   return (
     <Provider store={appstore}>
-      <div className="app">
+      <div className="app flex flex-col min-h-screen">
         <Header />
         <Outlet />
+        <Footer />
       </div>
     </Provider>
   );
