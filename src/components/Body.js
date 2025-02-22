@@ -33,10 +33,10 @@ const Body = () => {
 
   if (onlineStatus === false) return <h1>Oops!!! No Internet Connection😔</h1>;
 
-  return listOfRestaurants.length === 0 ? (
+  return listOfRestaurants?.length === 0 ? (
     <Shrimmer />
   ) : (
-    <div className="body">
+    <div className="body bg-rose-50">
       <div className="flex mx-6">
         <div className=" m-4 p-4">
           <input
@@ -64,7 +64,7 @@ const Body = () => {
         </div>
         <div className=" mx-2 p-4 flex items-center">
           <button
-            className="mx-3 px-3 py-1 bg-gray-200 rounded-2xl hover:bg-gray-300"
+            className="mx-3 px-3 py-1 bg-green-200 rounded-2xl hover:bg-green-300"
             onClick={() => {
               //filter logic here
               const filteredList = listOfRestaurants.filter(
@@ -78,7 +78,7 @@ const Body = () => {
         </div>
       </div>
       <div className="flex flex-wrap mx-8">
-        {filteredRestaurant.map((restaurant) => (
+        {filteredRestaurant?.map((restaurant) => (
           <Link
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}

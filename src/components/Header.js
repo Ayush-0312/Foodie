@@ -11,10 +11,10 @@ const Header = () => {
 
   // subscribing to the store
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  //console.log(cartItems);
 
   return (
-    <div className="flex justify-between bg-pink-200 shadow-lg mb-5">
+    <div className="flex justify-between bg-pink-200 shadow-lg z-10">
       <div className="logo-container">
         <img className="w-32 " src={LOGO_URL} />
       </div>
@@ -23,17 +23,18 @@ const Header = () => {
           <li className="px-4 font-semibold">
             <Link to="/">Home</Link>
           </li>
-          <li className="px-4 font-semibold">
+          {/* <li className="px-4 font-semibold">
             <Link to="/about">About Us</Link>
-          </li>
-          <li className="px-4 font-semibold">
-            <Link to="/contact">Contact Us</Link>
-          </li>
+          </li> */}
+          
           <li className="px-4 font-semibold">
             <Link to="/grocery">Grocery</Link>
           </li>
           <li className="px-4 font-semibold">
             <Link to="/cart">Cart🛒: {cartItems.length}</Link>
+          </li>
+          <li className="px-4 font-semibold">
+            <Link to="/contact">Contact Us</Link>
           </li>
           <li className="px-4 font-semibold">
             Active: {onlineStatus ? "🟢" : "🔴"}

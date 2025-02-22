@@ -6,3 +6,12 @@ export const LOGO_URL =
 
 export const MENU_URL =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6958531&lng=77.0805496&restaurantId=";
+
+export const AVATAR = "https://avatars.githubusercontent.com/u/175679849?v=4";
+
+export const GITHUB = "https://github.com/Ayush-0312";
+
+export const LINKEDIN = "https://www.linkedin.com/in/ayush-gupta-41484b234/";
+
+export const GROCERY =
+  "https://cdn-icons-png.flaticon.com/512/7592/7592261.png";

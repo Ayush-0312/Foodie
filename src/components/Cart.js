@@ -11,7 +11,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="text-center m-4 p-4">
+    <div className="text-center m-4 p-4 bg-rose-50">
       <h1 className="text-3xl font-bold">Cart 🛒</h1>
       <div>
         <button
@@ -21,7 +21,7 @@ const Cart = () => {
           Clear cart{" "}
         </button>
       </div>
-      <div className="w-6/12 m-auto  bg-gray-100 rounded-lg border-b-2">
+      <div className="w-6/12 m-auto  bg-rose-100 rounded-lg border-b-2">
         {cartItems.length === 0 && (
           <h1 className="m-3 text-center p-2 font-semibold">
             Cart is empty. Add items to the cart!!!
