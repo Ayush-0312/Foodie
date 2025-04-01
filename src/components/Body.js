@@ -31,7 +31,15 @@ const Body = () => {
 
   const onlineStatus = useOnlineStatus();
 
-  if (onlineStatus === false) return <h1>Oops!!! No Internet Connection😔</h1>;
+  if (!onlineStatus)
+    return (
+      <div className="mx-auto left-0 right-0 pt-5">
+        <h1 className="font-bold text-2xl">
+          Oops!!! No Internet Connection😔
+        </h1>
+        ;
+      </div>
+    );
 
   return listOfRestaurants?.length === 0 ? (
     <Shrimmer />
@@ -68,7 +76,7 @@ const Body = () => {
             onClick={() => {
               //filter logic here
               const filteredList = listOfRestaurants.filter(
-                (resList) => resList.info.avgRating > 4.2
+                (resList) => resList?.info?.avgRating > 4.2
               );
               setFilteredRestaurant(filteredList);
             }}
@@ -81,7 +89,7 @@ const Body = () => {
         {filteredRestaurant?.map((restaurant) => (
           <Link
             key={restaurant.info.id}
-            to={"/restaurants/" + restaurant.info.id}
+            to={"/restaurants/" + restaurant?.info?.id}
           >
             <RestaurantCard resData={restaurant} />
           </Link>
