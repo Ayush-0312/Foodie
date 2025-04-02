@@ -34,10 +34,7 @@ const Body = () => {
   if (!onlineStatus)
     return (
       <div className="mx-auto left-0 right-0 pt-5">
-        <h1 className="font-bold text-2xl">
-          Oops!!! No Internet Connection😔
-        </h1>
-        ;
+        <h1 className="font-bold text-2xl">Oops!!! No Internet Connection😔</h1>
       </div>
     );
 
