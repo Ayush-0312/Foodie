@@ -50,7 +50,7 @@ const appRouter = createBrowserRouter([
           <Suspense
             fallback={
               <div className="mx-auto left-0 right-0 pt-5 bg-green-100">
-                <h1 className="font-bold text-2xl bg-green-700">
+                <h1 className="font-bold text-2xl text-green-700">
                   Loading Grocery...
                 </h1>
               </div>
