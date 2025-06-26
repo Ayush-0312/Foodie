@@ -11,9 +11,14 @@ export const AVATAR = "https://avatars.githubusercontent.com/u/175679849?v=4";
 
 export const GITHUB = "https://github.com/Ayush-0312/Foodie";
 
-export const LINKEDIN = "https://www.linkedin.com/in/ayush-gupta-41484b234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app";
+export const LINKEDIN =
+  "https://www.linkedin.com/in/ayush-gupta-41484b234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app";
 
-export const PORTFOLIO = "https://portfolio-ayush-gupta.vercel.app/";
+export const INSTAGRAM = "https://www.instagram.com/yoda.codes/";
+
+export const X = "https://x.com/TheAyushG";
+
+export const PORTFOLIO = "https://www.theayushgupta.in/";
 
 export const GROCERY =
   "https://cdn-icons-png.flaticon.com/512/7592/7592261.png";

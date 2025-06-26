@@ -1,8 +1,9 @@
 import React from "react";
-import { AVATAR, PORTFOLIO } from "../utils/constants";
-import { FaGithub } from "react-icons/fa6";
+import { AVATAR, INSTAGRAM, PORTFOLIO, X } from "../utils/constants";
+import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { GITHUB, LINKEDIN } from "../utils/constants";
 import { FaLinkedin } from "react-icons/fa";
+import { LuInstagram } from "react-icons/lu";
 
 const Footer = () => {
   const handleAvatarClick = () => {
@@ -14,7 +15,7 @@ const Footer = () => {
       <div>
         <span className="text-2xl font-semibold text-gray-800">FOODIE</span>
       </div>
-      <div className="flex space-x-4">
+      <div className="flex space-x-2">
         <span className="font-semibold text-lg">Created by- Ayush Gupta</span>
         <div onClick={handleAvatarClick}>
           <img
@@ -28,6 +29,12 @@ const Footer = () => {
         </a>
         <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
           <FaLinkedin size={30} />
+        </a>
+        <a href={X} target="_blank" rel="noopener noreferrer">
+          <FaXTwitter size={30} />
+        </a>
+        <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">
+          <LuInstagram size={30} />
         </a>
       </div>
     </div>

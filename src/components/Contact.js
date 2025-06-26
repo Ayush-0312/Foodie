@@ -1,5 +1,6 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import { GITHUB, LINKEDIN } from "../utils/constants";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { GITHUB, INSTAGRAM, LINKEDIN, X } from "../utils/constants";
+import { LuInstagram } from "react-icons/lu";
 
 const Contact = () => {
   const handleGithubClick = () => {
@@ -7,6 +8,12 @@ const Contact = () => {
   };
   const handleLinkedInClick = () => {
     window.open(LINKEDIN, "_blank", "noopener,noreferrer");
+  };
+  const handleXClick = () => {
+    window.open(X, "_blank", "noopener,noreferrer");
+  };
+  const handleInstaClick = () => {
+    window.open(INSTAGRAM, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -19,7 +26,6 @@ const Contact = () => {
             onClick={handleGithubClick}
           >
             <h2 className="text-2xl font-bold mx-2">GITHUB</h2>
-
             <FaGithub size={30} />
           </div>
           <div
@@ -29,9 +35,23 @@ const Contact = () => {
             <h2 className="text-2xl font-bold mx-2">LINKEDIN</h2>
             <FaLinkedin size={30} />
           </div>
+          <div
+            className="flex bg-sky-300 m-4 p-4 rounded-full shadow-xl hover:scale-110 transition duration-2 cursor-pointer"
+            onClick={handleXClick}
+          >
+            <h2 className="text-2xl font-bold mx-2">X</h2>
+            <FaXTwitter size={30} />
+          </div>
+          <div
+            className="flex bg-sky-300 m-4 p-4 rounded-full shadow-xl hover:scale-110 transition duration-2 cursor-pointer"
+            onClick={handleInstaClick}
+          >
+            <h2 className="text-2xl font-bold mx-2">INSTAGRAM</h2>
+            <LuInstagram size={30} />
+          </div>
         </div>
         <span className="text-lg font-semibold pt-4">
-          Email📧 - Kumarayush3121511@gmail.com
+          Email📧 - theayushgupta.dev@gmail.com
         </span>
       </div>
     </div>
