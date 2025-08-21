@@ -20,7 +20,7 @@ const Body = () => {
     );
 
     const json = await data.json();
-    //console.log(json);
+
     setListOfRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -42,8 +42,8 @@ const Body = () => {
     <Shrimmer />
   ) : (
     <div className="body bg-rose-50">
-      <div className="flex mx-6">
-        <div className=" m-4 p-4">
+      <div className="flex flex-wrap items-center mx-6">
+        <div className="flex m-4 p-2 space-x-3">
           <input
             type="text"
             className="border border-solid border-gray-500 rounded-2xl px-2 cursor-text"
@@ -53,7 +53,7 @@ const Body = () => {
             }}
           />
           <button
-            className="mx-3 px-3  py-1 bg-green-200 rounded-2xl hover:bg-green-300"
+            className="mx-3 px-3 py-1 bg-green-200 rounded-2xl hover:bg-green-300"
             onClick={() => {
               const filteredRestaurants = listOfRestaurants.filter((resList) =>
                 resList.info.name
@@ -67,7 +67,7 @@ const Body = () => {
             Search
           </button>
         </div>
-        <div className=" mx-2 p-4 flex items-center">
+        <div className="mx-2">
           <button
             className="mx-3 px-3 py-1 bg-green-200 rounded-2xl hover:bg-green-300"
             onClick={() => {
@@ -78,11 +78,11 @@ const Body = () => {
               setFilteredRestaurant(filteredList);
             }}
           >
-            Top Rated Restaurants
+            ⭐ Top Rated Restaurants
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap mx-8">
+      <div className="flex flex-wrap mx-8 mb-4">
         {filteredRestaurant?.map((restaurant) => (
           <Link
             key={restaurant.info.id}

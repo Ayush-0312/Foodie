@@ -5,16 +5,23 @@ import { CDN_URL } from "../utils/constants";
 
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
-
   const [addedItems, setAddedItems] = useState([]);
+
   const handleAddItem = (item) => {
+    const itemId = item?.card?.info?.id;
     // dispatch an action
     dispatch(addItem(item));
-    setAddedItems((prevState) => [...prevState, item?.card?.info?.id]);
+
+    // avoid duplicates
+    setAddedItems((prev) => (prev.includes(itemId) ? prev : [...prev, itemId]));
   };
 
-  if (!items || !Array.isArray(items)) {
-    return <p>No items available</p>;
+  if (!items || !Array.isArray(items) || items.length === 0) {
+    return (
+      <div className="text-center text-gray-700 py-4">
+        🍽️ No items available
+      </div>
+    );
   }
 
   return (
@@ -39,20 +46,19 @@ const ItemList = ({ items }) => {
             </div>
             <p className="text-sm">{item?.card?.info?.description}</p>
           </div>
-          <div className="w-3/12 p-4">
-            <div className="absolute ">
-              <button
-                className="p-2 mx-10 my-auto bg-gray-800 text-white rounded-lg font-semibold"
-                onClick={() => handleAddItem(item)}
-                disabled={addedItems.includes(item?.card?.info?.id)}
-              >
-                {addedItems.includes(item?.card?.info?.id) ? "Added" : "Add +"}
-              </button>
-            </div>
+          <div className="w-3/12 flex flex-col items-center">
             <img
               src={CDN_URL + item?.card?.info?.imageId}
-              className="rounded-lg"
+              alt={item?.card?.info?.name}
+              className="rounded-lg w-28 h-24 object-cover mb-2 shadow-sm"
             />
+            <button
+              className="px-2 py-1 -mt-6 mx-10 my-auto bg-neutral-700 text-white rounded-lg font-semibold"
+              onClick={() => handleAddItem(item)}
+              disabled={addedItems.includes(item?.card?.info?.id)}
+            >
+              {addedItems.includes(item?.card?.info?.id) ? "Added" : "Add +"}
+            </button>
           </div>
         </div>
       ))}

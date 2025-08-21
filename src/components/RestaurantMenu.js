@@ -27,11 +27,20 @@ const RestaurantMenu = () => {
 
   return (
     <div className="text-center bg-rose-50">
-      <h1 className="my-6 font-bold text-2xl">{name}</h1>
-      <p className="font-bold text-lg">
-        {cuisines.join(", ")} - {costForTwoMessage}
+      <h1 className="mt-6 mb-3 font-bold text-2xl">{name}</h1>
+      <p className="text-gray-700 font-semibold text-lg">
+        {cuisines.join(", ")}
       </p>
-      <p className="font-bold text-lg">Rating - {avgRating} ★</p>
+
+      <div className="flex justify-center items-center gap-2 m-2 text-base">
+        <span className="px-3 py-1 bg-green-100 text-green-700 font-semibold rounded-lg shadow-sm">
+          ⭐ {avgRating}
+        </span>
+        <span className="px-3 py-1 bg-yellow-100 text-yellow-700 font-semibold rounded-lg shadow-sm">
+          {costForTwoMessage}
+        </span>
+      </div>
+
       {/* category */}
       {categories.map((category, index) => (
         <RestaurantCategory

@@ -1,58 +1,65 @@
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { GITHUB, INSTAGRAM, LINKEDIN, X } from "../utils/constants";
 import { LuInstagram } from "react-icons/lu";
+import { GITHUB, INSTAGRAM, LINKEDIN, X } from "../utils/constants";
+import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
-  const handleGithubClick = () => {
-    window.open(GITHUB, "_blank", "noopener,noreferrer");
-  };
-  const handleLinkedInClick = () => {
-    window.open(LINKEDIN, "_blank", "noopener,noreferrer");
-  };
-  const handleXClick = () => {
-    window.open(X, "_blank", "noopener,noreferrer");
-  };
-  const handleInstaClick = () => {
-    window.open(INSTAGRAM, "_blank", "noopener,noreferrer");
+  const openLink = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <div className="bg-sky-100 h-[529px]">
-      <div className="w-6/12 mx-auto text-center">
-        <h1 className="text-sky-700 font-bold text-4xl pt-4">Contact Us</h1>
-        <div className="pt-4 flex justify-center mb-4">
-          <div
-            className="flex bg-sky-300 m-4 p-4 rounded-full shadow-xl hover:scale-110 transition duration-2 cursor-pointer"
-            onClick={handleGithubClick}
+    <div className="min-h-[545px] bg-sky-50 flex items-center justify-center px-4">
+      <div className="text-center">
+        {/* Heading */}
+        <h1 className="text-sky-700 font-extrabold text-4xl">Contact Me</h1>
+        <p className="text-gray-600 mt-2">
+          Let’s connect and build something cool 🚀
+        </p>
+
+        {/* Social Links */}
+        <div className="flex justify-center gap-6 mt-8 flex-wrap">
+          <button
+            onClick={() => openLink(GITHUB)}
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-900 text-white shadow-lg hover:scale-105 hover:bg-gray-800 transition"
           >
-            <h2 className="text-2xl font-bold mx-2">GITHUB</h2>
-            <FaGithub size={30} />
-          </div>
-          <div
-            className="flex bg-sky-300 m-4 p-4 rounded-full shadow-xl hover:scale-110 transition duration-2 cursor-pointer"
-            onClick={handleLinkedInClick}
+            <FaGithub size={24} /> <span className="font-semibold">GitHub</span>
+          </button>
+
+          <button
+            onClick={() => openLink(LINKEDIN)}
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-600 text-white shadow-lg hover:scale-105 hover:bg-blue-700 transition"
           >
-            <h2 className="text-2xl font-bold mx-2">LINKEDIN</h2>
-            <FaLinkedin size={30} />
-          </div>
-          <div
-            className="flex bg-sky-300 m-4 p-4 rounded-full shadow-xl hover:scale-110 transition duration-2 cursor-pointer"
-            onClick={handleXClick}
+            <FaLinkedin size={24} />{" "}
+            <span className="font-semibold">LinkedIn</span>
+          </button>
+
+          <button
+            onClick={() => openLink(X)}
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-black text-white shadow-lg hover:scale-105 hover:bg-gray-800 transition"
           >
-            <h2 className="text-2xl font-bold mx-2">X</h2>
-            <FaXTwitter size={30} />
-          </div>
-          <div
-            className="flex bg-sky-300 m-4 p-4 rounded-full shadow-xl hover:scale-110 transition duration-2 cursor-pointer"
-            onClick={handleInstaClick}
+            <FaXTwitter size={22} /> <span className="font-semibold">X</span>
+          </button>
+
+          <button
+            onClick={() => openLink(INSTAGRAM)}
+            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-pink-500 text-white shadow-lg hover:scale-105 hover:bg-pink-600 transition"
           >
-            <h2 className="text-2xl font-bold mx-2">INSTAGRAM</h2>
-            <LuInstagram size={30} />
-          </div>
+            <LuInstagram size={24} />{" "}
+            <span className="font-semibold">Instagram</span>
+          </button>
         </div>
-        <span className="text-lg font-semibold pt-4">
-          Email📧 - theayushgupta.dev@gmail.com
-        </span>
+
+        {/* Email */}
+        <div className="mt-8 flex items-center justify-center gap-2 text-lg font-medium">
+          <MdEmail size={22} className="text-sky-600" />
+          <a
+            href="mailto:theayushgupta.dev@gmail.com"
+            className="text-sky-600 hover:underline"
+          >
+            theayushgupta.dev@gmail.com
+          </a>
+        </div>
       </div>
     </div>
   );
