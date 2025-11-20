@@ -14,7 +14,7 @@ export const GITHUB = "https://github.com/Ayush-0312/Foodie";
 export const LINKEDIN =
   "https://www.linkedin.com/in/ayush-gupta-41484b234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app";
 
-export const INSTAGRAM = "https://www.instagram.com/yoda.codes/";
+export const INSTAGRAM = "https://www.instagram.com/theayushgupta.dev/";
 
 export const X = "https://x.com/TheAyushG";
 
